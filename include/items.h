@@ -1,14 +1,9 @@
-/* items.h - Définition des objets */
 #ifndef ITEMS_H
 #define ITEMS_H
 
-typedef struct {
-    char name[20];  // Nom de l'objet
-    int effect_value;  // Valeur de l'effet (ex: +HP, +Niveau)
-    int price;  // Prix d'achat de l'objet
-} Item;
+#include "types.h"  
 
-// Initialise la liste des objets du jeu
+void use_item(Player *player, Supemon *supemon, int item_index);
 void init_items(Item items[]);
 
 #endif

@@ -1,20 +1,15 @@
-/* battle.h - Gestion des combats */
 #ifndef BATTLE_H
 #define BATTLE_H
 
 #include "player.h"
 #include "supemon.h"
+#include "types.h"
 
-// Lance un combat contre un Supémon sauvage
+void start_wild_battle(Player *player);
 void start_battle(Player *player, Supemon *enemy);
-
-// Calcule les dégâts infligés en fonction des stats
 int calculate_damage(Supemon *attacker, Supemon *defender, int base_damage);
-
-// Tente une fuite (réussite basée sur la vitesse)
-int attempt_escape(Supemon *player_supemon, Supemon *enemy_supemon);
-
-// Tente de capturer un Supémon ennemi
 int attempt_capture(Supemon *enemy_supemon);
-
+int attempt_escape(Supemon *player_supemon, Supemon *enemy_supemon);
+void apply_move_effect(Supemon *attacker, Supemon *defender, const char *move);
+    
 #endif
